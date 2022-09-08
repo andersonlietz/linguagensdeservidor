@@ -29,7 +29,7 @@ echo'<hr>';
 
 $idade = 20;
 
-function modifica($a){
+function modifica(&$a){
     echo 'Internamente (antes): ' . $a . '<br>';
     $a = 100;
     echo 'Internamente (depois): ' . $a . '<br>';
@@ -39,8 +39,22 @@ echo $idade . '<br>';
 modifica($idade);
 echo $idade;
 
+# -------------
+echo "<hr>";
+function calcular_idade($ano_nascimento){
+	return date('Y') - $ano_nascimento;
+}
+echo 'Você tem ' . calcular_idade(2000) . ' anos!';
 
 
-
-
+######
+echo"<hr>";
+function fatorial($n){
+    if($n == 0) {
+    return 1;	} else {
+        return $n * fatorial($n - 1);
+        }
+    }
+    
+    echo 'O fatorial de 5 é ' . fatorial(5);
 
