@@ -1,14 +1,7 @@
 <?php 
 
-
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'meu_banco';
- $con = mysqli_connect($host, $user , $pass, $db);
-
- $sql = "SELECT * FROM usuarios";
-$res = mysqli_query($con, $sql);
-  
-
+$mysql = mysqli_connect('localhost', 'root', '', 'meu_banco');
+$resultado = mysqli_query($mysql, "SELECT * from usuarios");
+$linha = mysqli_fetch_assoc($resultado);
+echo $linha['nome'];
 ?>
